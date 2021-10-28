@@ -1,3 +1,4 @@
+import 'package:basecode/screens/BookingConfirmationScreen.dart';
 import 'package:basecode/screens/BookingScreen.dart';
 import 'package:basecode/screens/ConversationScreen.dart';
 import 'package:basecode/screens/DashboardScreen.dart';
@@ -11,6 +12,7 @@ import 'package:basecode/screens/RegistrationScreen.dart';
 import 'package:basecode/screens/SettingsScreen.dart';
 import 'package:basecode/screens/SignupScreen.dart';
 import 'package:basecode/screens/TransactionHistoryScreen.dart';
+import 'package:basecode/screens/TruckSelectionScreen.dart';
 import 'package:get/get.dart';
 
 final List<GetPage<dynamic>> routes = [
@@ -32,4 +34,9 @@ final List<GetPage<dynamic>> routes = [
       page: () => TransactionHistoryScreen()),
   GetPage(name: SettingsScreen.routeName, page: () => SettingsScreen()),
   GetPage(name: BookingScreen.routeName, page: () => BookingScreen()),
+  GetPage(
+      name: TruckSelectionScreen.routeName, page: () => TruckSelectionScreen()),
+  GetPage(
+      name: BookingConfirmationScreen.routeName,
+      page: () => BookingConfirmationScreen()),
 ];

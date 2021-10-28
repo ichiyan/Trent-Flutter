@@ -1,3 +1,4 @@
+import 'package:basecode/screens/TruckSelectionScreen.dart';
 import 'package:basecode/widgets/Avatar.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +75,9 @@ class _BookingScreenState extends State<BookingScreen> {
                   PrimaryButton(
                     text: "Select Vehicles",
                     iconData: null,
-                    onPress: () {},
+                    onPress: () {
+                      navigateToPage(TruckSelectionScreen.routeName);
+                    },
                     height: 60,
                   )
                 ],
