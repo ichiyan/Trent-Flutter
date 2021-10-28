@@ -30,19 +30,23 @@ class ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomTextFormField(
-                      labelText: "Email",
-                      hintText: "Enter your email.",
-                      iconData: FontAwesomeIcons.solidEnvelope,
-                      controller: TextEditingController()),
+                    labelText: "Email",
+                    hintText: "Enter your email.",
+                    iconData: FontAwesomeIcons.solidEnvelope,
+                    controller: TextEditingController(),
+                    textInputType: null,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
                   PrimaryButton(
-                      text: "Send Email.",
-                      iconData: FontAwesomeIcons.solidEnvelope,
-                      onPress: () {
-                        print("Send email");
-                      }),
+                    text: "Send Email.",
+                    iconData: FontAwesomeIcons.solidEnvelope,
+                    onPress: () {
+                      print("Send email");
+                    },
+                    height: null,
+                  ),
                 ],
               )),
             ),

@@ -1,3 +1,4 @@
+import 'package:basecode/screens/BookingScreen.dart';
 import 'package:basecode/screens/DashboardScreen.dart';
 import 'package:basecode/widgets/CustomTextFormField.dart';
 import 'package:basecode/widgets/PasswordField.dart';
@@ -75,6 +76,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(
                     height: 20.0,
+                  ),
+                  //test btn which directs to booking screens
+                  PrimaryButton(
+                    text: "Book",
+                    iconData: null,
+                    onPress: () {
+                      Get.toNamed(BookingScreen.routeName);
+                    },
+                    height: 60,
                   ),
                   Container(
                     child: Center(

@@ -37,28 +37,32 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomTextFormField(
-                      labelText: "First Name",
-                      hintText:
-                          "First Name must have a minimum of 4 characters.",
-                      iconData: FontAwesomeIcons.user,
-                      controller: TextEditingController()),
+                    labelText: "First Name",
+                    hintText: "First Name must have a minimum of 4 characters.",
+                    iconData: FontAwesomeIcons.user,
+                    controller: TextEditingController(),
+                    textInputType: null,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
                   CustomTextFormField(
-                      labelText: "Last Name",
-                      hintText:
-                          "First Name must have a minimum of 4 characters.",
-                      iconData: FontAwesomeIcons.user,
-                      controller: TextEditingController()),
+                    labelText: "Last Name",
+                    hintText: "First Name must have a minimum of 4 characters.",
+                    iconData: FontAwesomeIcons.user,
+                    controller: TextEditingController(),
+                    textInputType: null,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
                   CustomTextFormField(
-                      labelText: "Email",
-                      hintText: "Enter a valid email.",
-                      iconData: FontAwesomeIcons.solidEnvelope,
-                      controller: TextEditingController()),
+                    labelText: "Email",
+                    hintText: "Enter a valid email.",
+                    iconData: FontAwesomeIcons.solidEnvelope,
+                    controller: TextEditingController(),
+                    textInputType: null,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
@@ -89,11 +93,13 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                     height: 20.0,
                   ),
                   PrimaryButton(
-                      text: "Register",
-                      iconData: FontAwesomeIcons.solidFolder,
-                      onPress: () {
-                        print("Register button");
-                      }),
+                    text: "Register",
+                    iconData: FontAwesomeIcons.solidFolder,
+                    onPress: () {
+                      print("Register button");
+                    },
+                    height: null,
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),
