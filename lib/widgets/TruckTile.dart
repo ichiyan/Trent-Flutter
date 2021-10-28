@@ -1,3 +1,4 @@
+import 'package:basecode/constants.dart';
 import 'package:basecode/screens/BookingConfirmationScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,7 +45,7 @@ class TruckTile extends StatelessWidget {
               child: Text(
                 this.name,
                 style: TextStyle(
-                  color: Theme.of(context).accentColor,
+                  color: kPrimaryColor,
                   fontSize: 15.0,
                   fontWeight: FontWeight.w700,
                 ),
@@ -58,7 +59,7 @@ class TruckTile extends StatelessWidget {
                     Text(
                       this.dimensions,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: kSecondaryColor,
                         fontSize: 13.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -71,7 +72,7 @@ class TruckTile extends StatelessWidget {
                     Text(
                       this.capacity,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: kSecondaryColor,
                         fontSize: 13.0,
                         fontWeight: FontWeight.bold,
                       ),
