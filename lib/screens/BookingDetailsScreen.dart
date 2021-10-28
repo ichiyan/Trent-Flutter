@@ -1,19 +1,15 @@
 import 'package:basecode/constants.dart';
-import 'package:basecode/screens/BookingDetailsScreen.dart';
-import 'package:basecode/widgets/ConfirmationDetailTile.dart';
-import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BookingConfirmationScreen extends StatefulWidget {
-  static String routeName = "/bookingConfirmation";
+class BookingDetailsScreen extends StatefulWidget {
+  static String routeName = "/bookingDetails";
 
   @override
-  _BookingConfirmationScreenState createState() =>
-      _BookingConfirmationScreenState();
+  _BookingDetailsScreenState createState() => _BookingDetailsScreenState();
 }
 
-class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
+class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -36,48 +32,24 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
             ),
           ),
         ),
-        body: SingleChildScrollView(
+        body: Container(
+          width: width,
+          height: height,
+          color: kPrimaryColor,
           child: Column(
             children: [
-              Container(
-                color: kPrimaryColor,
-                height: height * 0.25,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/truck-confirm.png',
-                          width: width * 0.15,
-                        ),
-                        Text(
-                          "Confirmation",
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+              SizedBox(
+                height: height * 0.15,
               ),
-              Container(
-                width: width * 0.8,
-                child: ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  children: [
-                    ConfirmationDetailTile("09458796325",
-                        Icons.local_phone_outlined, () {}, "Contact Number"),
-                    ConfirmationDetailTile("Cash", Icons.credit_card_outlined,
-                        () {}, "Payment Method"),
-                    ConfirmationDetailTile(
-                        "Add a note to driver", Icons.chat_outlined, () {}),
-                  ],
+              Image.asset('assets/images/truck-search.png'),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "Searching for truck...",
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ],
@@ -133,24 +105,10 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
               SizedBox(
                 height: 20.0,
               ),
-              PrimaryButton(
-                  text: "Place Order",
-                  iconData: null,
-                  onPress: () {
-                    navigateToPage(BookingDetailsScreen.routeName);
-                  },
-                  height: 16.0),
-              SizedBox(
-                height: 20.0,
-              ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  navigateToPage(String routeName) {
-    Get.toNamed(routeName);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:basecode/screens/BookingConfirmationScreen.dart';
+import 'package:basecode/screens/BookingDetailsScreen.dart';
 import 'package:basecode/screens/BookingScreen.dart';
 import 'package:basecode/screens/ConversationScreen.dart';
 import 'package:basecode/screens/DashboardScreen.dart';
@@ -39,4 +40,6 @@ final List<GetPage<dynamic>> routes = [
   GetPage(
       name: BookingConfirmationScreen.routeName,
       page: () => BookingConfirmationScreen()),
+  GetPage(
+      name: BookingDetailsScreen.routeName, page: () => BookingDetailsScreen()),
 ];
