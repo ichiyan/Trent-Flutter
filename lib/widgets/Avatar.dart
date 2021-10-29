@@ -14,7 +14,20 @@ class Avatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-            image: NetworkImage(this.imageUrl), fit: BoxFit.fill),
+          image: NetworkImage(this.imageUrl),
+          fit: BoxFit.fill,
+        ),
+        border: Border.all(
+          color: Colors.white,
+          width: 4.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(101, 101, 101, 0.15),
+            spreadRadius: 5,
+            blurRadius: 7,
+          )
+        ],
       ),
     );
   }

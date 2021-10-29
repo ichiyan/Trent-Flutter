@@ -74,7 +74,7 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
     Get.toNamed(routeName);
   }
 
-  navigateToConfirmation(int id) {
+  navigateToConfirmation() {
     Get.toNamed(BookingConfirmationScreen.routeName);
   }
 }

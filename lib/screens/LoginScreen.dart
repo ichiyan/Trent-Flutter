@@ -70,21 +70,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     iconData: null,
                     onPress: () {
                       //add auth logic here
-                      Get.toNamed(DashboardScreen.routeName);
+                      Get.toNamed(BookingScreen.routeName);
                     },
                     height: 60,
                   ),
                   SizedBox(
                     height: 20.0,
-                  ),
-                  //test btn which directs to booking screens
-                  PrimaryButton(
-                    text: "Book",
-                    iconData: null,
-                    onPress: () {
-                      Get.toNamed(BookingScreen.routeName);
-                    },
-                    height: 60,
                   ),
                   Container(
                     child: Center(

@@ -1,33 +1,54 @@
-import 'package:basecode/constants.dart';
-import 'package:basecode/screens/BookingConfirmationScreen.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 
-class TruckTile extends StatelessWidget {
+import '../constants.dart';
+
+// ignore: must_be_immutable
+class TruckTile extends StatefulWidget {
   final int id;
   final Function onTap;
   final String name;
   final String dimensions;
   final String capacity;
   final String imageUrl;
+  bool selected;
 
   TruckTile(this.id, this.onTap, this.name, this.dimensions, this.capacity,
-      this.imageUrl);
+      this.imageUrl,
+      [this.selected = false]);
 
+  @override
+  _TruckTileState createState() => _TruckTileState();
+}
+
+class _TruckTileState extends State<TruckTile> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
-        this.onTap(id);
+        setState(() {
+          widget.selected = true;
+        });
+        Timer(Duration(seconds: 1), () {
+          widget.onTap();
+          setState(() {
+            widget.selected = false;
+          });
+        });
       },
       child: Container(
         margin: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            border:
-                Border.all(color: Color.fromRGBO(229, 229, 229, 1), width: 1)),
+          color: widget.selected == true ? kPrimaryColor : null,
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          border: Border.all(
+            color: Color.fromRGBO(229, 229, 229, 1),
+            width: 1,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: ListTile(
@@ -37,15 +58,19 @@ class TruckTile extends StatelessWidget {
                 constraints: BoxConstraints(
                   minWidth: width * 0.25,
                 ),
-                child: Image.asset(this.imageUrl, fit: BoxFit.cover),
+                child: Image.asset(
+                    widget.selected == true
+                        ? 'assets/images/truck-white.png'
+                        : widget.imageUrl,
+                    fit: BoxFit.cover),
               ),
             ),
             title: Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
               child: Text(
-                this.name,
+                widget.name,
                 style: TextStyle(
-                  color: kPrimaryColor,
+                  color: widget.selected == true ? Colors.white : kPrimaryColor,
                   fontSize: 15.0,
                   fontWeight: FontWeight.w700,
                 ),
@@ -57,27 +82,45 @@ class TruckTile extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      this.dimensions,
+                      widget.dimensions,
                       style: TextStyle(
-                        color: kSecondaryColor,
+                        color: widget.selected == true
+                            ? Color(0XFFFFD6BF)
+                            : kSecondaryColor,
                         fontSize: 13.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(" Meters"),
+                    Text(
+                      " Meters",
+                      style: TextStyle(
+                        color: widget.selected == true
+                            ? Color(0XFFFFD6BF)
+                            : kSecondaryColor,
+                      ),
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     Text(
-                      this.capacity,
+                      widget.capacity,
                       style: TextStyle(
-                        color: kSecondaryColor,
+                        color: widget.selected == true
+                            ? Color(0XFFFFD6BF)
+                            : kSecondaryColor,
                         fontSize: 13.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(" Maximum"),
+                    Text(
+                      " Maximum",
+                      style: TextStyle(
+                        color: widget.selected == true
+                            ? Color(0XFFFFD6BF)
+                            : kSecondaryColor,
+                      ),
+                    ),
                   ],
                 )
               ],
@@ -86,7 +129,14 @@ class TruckTile extends StatelessWidget {
             dense: true,
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [Icon(FontAwesomeIcons.box)],
+              children: [
+                Icon(
+                  FontAwesomeIcons.box,
+                  color: widget.selected == true
+                      ? Colors.white
+                      : Colors.grey.withOpacity(0.5),
+                )
+              ],
             ),
           ),
         ),
