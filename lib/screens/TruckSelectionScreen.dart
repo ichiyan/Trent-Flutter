@@ -16,6 +16,7 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -81,6 +82,9 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
                         "2000Kg",
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: height * 0.2,
                   ),
                 ],
               ),

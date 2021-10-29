@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //add auth logic here
                       Get.toNamed(BookingScreen.routeName);
                     },
-                    height: 60,
+                    height: 50,
                   ),
                   SizedBox(
                     height: 20.0,

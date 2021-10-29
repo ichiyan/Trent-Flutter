@@ -37,50 +37,53 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                color: kPrimaryColor,
-                height: height * 0.25,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/truck-confirm.png',
-                          width: width * 0.15,
-                        ),
-                        Text(
-                          "Confirmation",
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: height * 0.45),
+            child: Column(
+              children: [
+                Container(
+                  color: kPrimaryColor,
+                  height: height * 0.25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/truck-confirm.png',
+                            width: width * 0.15,
                           ),
-                        ),
-                      ],
-                    )
-                  ],
+                          Text(
+                            "Confirmation",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                width: width * 0.8,
-                child: ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  children: [
-                    ConfirmationDetailTile("09458796325",
-                        Icons.local_phone_outlined, () {}, "Contact Number"),
-                    ConfirmationDetailTile("Cash", Icons.credit_card_outlined,
-                        () {}, "Payment Method"),
-                    ConfirmationDetailTile(
-                        "Add a note to driver", Icons.chat_outlined, () {}),
-                  ],
+                Container(
+                  width: width * 0.8,
+                  child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    children: [
+                      ConfirmationDetailTile("09458796325",
+                          Icons.local_phone_outlined, () {}, "Contact Number"),
+                      ConfirmationDetailTile("Cash", Icons.credit_card_outlined,
+                          () {}, "Payment Method"),
+                      ConfirmationDetailTile(
+                          "Add a note to driver", Icons.chat_outlined, () {}),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         bottomSheet: Container(

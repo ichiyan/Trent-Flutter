@@ -82,22 +82,26 @@ class _TruckTileState extends State<TruckTile> {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          widget.dimensions,
-                          style: TextStyle(
-                            color: widget.selected == true
-                                ? Color(0XFFFFD6BF)
-                                : kSecondaryColor,
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Text(
+                            widget.dimensions,
+                            style: TextStyle(
+                              color: widget.selected == true
+                                  ? Color(0XFFFFD6BF)
+                                  : kSecondaryColor,
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                        Text(
-                          " Meters",
-                          style: TextStyle(
-                            color: widget.selected == true
-                                ? Color(0XFFFFD6BF)
-                                : kSecondaryColor,
+                        Expanded(
+                          child: Text(
+                            " Meters",
+                            style: TextStyle(
+                              color: widget.selected == true
+                                  ? Color(0XFFFFD6BF)
+                                  : kSecondaryColor,
+                            ),
                           ),
                         ),
                       ],

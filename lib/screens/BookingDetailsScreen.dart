@@ -33,27 +33,32 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
             ),
           ),
         ),
-        body: Container(
-          width: width,
-          height: height,
-          color: kPrimaryColor,
-          child: Column(
-            children: [
-              SizedBox(
-                height: height * 0.15,
-              ),
-              Image.asset('assets/images/truck-search.png'),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  "Searching for truck...",
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w700,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(bottom: height * 0.1),
+            child: Container(
+              width: width,
+              height: height,
+              color: kPrimaryColor,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: height * 0.15,
                   ),
-                ),
+                  Image.asset('assets/images/truck-search.png'),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "Searching for truck...",
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
         bottomSheet: Container(
