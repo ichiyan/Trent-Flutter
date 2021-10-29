@@ -1,5 +1,6 @@
 import 'package:basecode/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dash/flutter_dash.dart';
 import 'package:get/get.dart';
 
 class BookingDetailsScreen extends StatefulWidget {
@@ -74,6 +75,79 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Icon(
+                          Icons.location_on_outlined,
+                          color: kPrimaryColor,
+                          size: 38.0,
+                        ),
+                      ),
+                      Dash(
+                        direction: Axis.vertical,
+                        length: height * 0.03,
+                        dashLength: 5,
+                        dashThickness: 2,
+                        dashColor: kPrimaryColor,
+                      ),
+                      Icon(
+                        Icons.arrow_drop_down_sharp,
+                        color: kPrimaryColor,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                        child: Icon(
+                          Icons.location_on_sharp,
+                          color: kPrimaryColor,
+                          size: 35.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Unit 12 Aurora Garden Plaza,...",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Pick Up Location",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          color: kSecondaryColor,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 65.0,
+                      ),
+                      Text(
+                        "41 Langka Road, FTI Comple,...",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Destination",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          color: kSecondaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Divider(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -101,9 +175,6 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
               ),
             ],
           ),

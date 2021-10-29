@@ -139,7 +139,7 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
                   onPress: () {
                     navigateToPage(BookingDetailsScreen.routeName);
                   },
-                  height: 16.0),
+                  height: 61.0),
               SizedBox(
                 height: 20.0,
               ),

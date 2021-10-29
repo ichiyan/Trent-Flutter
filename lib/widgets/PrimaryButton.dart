@@ -20,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       minWidth: double.maxFinite,
-      height: 50,
+      height: height,
       child: RaisedButton(
         onPressed: onPress,
         child: Row(

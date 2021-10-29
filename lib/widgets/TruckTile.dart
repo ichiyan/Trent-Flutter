@@ -8,7 +8,7 @@ import '../constants.dart';
 // ignore: must_be_immutable
 class TruckTile extends StatefulWidget {
   final int id;
-  final Function onTap;
+  //final Function onTap;
   final String name;
   final String dimensions;
   final String capacity;
@@ -17,7 +17,7 @@ class TruckTile extends StatefulWidget {
   final String imageUrl = "assets/images/truck-orange.png";
   final String selectedImageUrl = "assets/images/truck-white.png";
 
-  TruckTile(this.id, this.onTap, this.name, this.dimensions, this.capacity,
+  TruckTile(this.id, this.name, this.dimensions, this.capacity,
       [this.selected = false]);
 
   @override
@@ -31,13 +31,7 @@ class _TruckTileState extends State<TruckTile> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          widget.selected = true;
-        });
-        Timer(Duration(seconds: 1), () {
-          widget.onTap();
-          setState(() {
-            widget.selected = false;
-          });
+          widget.selected = !widget.selected;
         });
       },
       child: Container(

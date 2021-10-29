@@ -43,9 +43,11 @@ class _BookingScreenState extends State<BookingScreen> {
           child: Center(
             child: Container(
               width: width * .90,
+              height: height * .90,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: height * .1),
+                  SizedBox(height: height * .05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -73,7 +75,6 @@ class _BookingScreenState extends State<BookingScreen> {
                       )
                     ],
                   ),
-                  SizedBox(height: height * .1),
                   Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0)),
@@ -138,15 +139,21 @@ class _BookingScreenState extends State<BookingScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: height * .1),
-                  PrimaryButton(
-                    text: "Select Vehicles",
-                    iconData: null,
-                    onPress: () {
-                      navigateToPage(TruckSelectionScreen.routeName);
-                    },
-                    height: 60,
-                  )
+                  SizedBox(height: height * .05),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 50.0),
+                      child: PrimaryButton(
+                        text: "Select Vehicles",
+                        iconData: null,
+                        onPress: () {
+                          navigateToPage(TruckSelectionScreen.routeName);
+                        },
+                        height: 48,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -1,4 +1,6 @@
 import 'package:basecode/screens/BookingConfirmationScreen.dart';
+import 'package:basecode/widgets/CustomFloatingActionBtn.dart';
+import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/TruckTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -36,34 +38,84 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
           child: Center(
             child: Container(
               width: width * .95,
-              child: ListView(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
+              child: Column(
                 children: [
-                  TruckTile(
-                    1,
-                    this.navigateToConfirmation,
-                    "Truck 1",
-                    "4.2 x 2.2 x 4.2",
-                    "2000Kg",
-                  ),
-                  TruckTile(
-                    2,
-                    this.navigateToConfirmation,
-                    "Truck 1",
-                    "4.2 x 2.2 x 4.2",
-                    "2000Kg",
-                  ),
-                  TruckTile(
-                    3,
-                    this.navigateToConfirmation,
-                    "Truck 1",
-                    "4.2 x 2.2 x 4.2",
-                    "2000Kg",
+                  ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    children: [
+                      TruckTile(
+                        1,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                      TruckTile(
+                        2,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                      TruckTile(
+                        3,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                      TruckTile(
+                        3,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                      TruckTile(
+                        3,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                      TruckTile(
+                        3,
+                        "Truck 1",
+                        "4.2 x 2.2 x 4.2",
+                        "2000Kg",
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
+          ),
+        ),
+        bottomSheet: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0, 3),
+              )
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              PrimaryButton(
+                text: "Select Vehicles",
+                iconData: null,
+                onPress: navigateToConfirmation,
+                height: 48,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+            ],
           ),
         ),
       ),
