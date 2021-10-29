@@ -1,8 +1,10 @@
+import 'package:basecode/constants.dart';
 import 'package:basecode/screens/TruckSelectionScreen.dart';
 import 'package:basecode/widgets/Avatar.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_dash/flutter_dash.dart';
 
 class BookingScreen extends StatefulWidget {
   static String routeName = "/booking";
@@ -12,7 +14,7 @@ class BookingScreen extends StatefulWidget {
 }
 
 class _BookingScreenState extends State<BookingScreen> {
-//replace this url during integration with driver image
+//replace with user image
   String imageUrl = "https://picsum.photos/200/305";
 
   @override
@@ -70,6 +72,71 @@ class _BookingScreenState extends State<BookingScreen> {
                         ],
                       )
                     ],
+                  ),
+                  SizedBox(height: height * .1),
+                  Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.location_searching_sharp,
+                                color: kPrimaryColor,
+                                size: 35.0,
+                              ),
+                              Dash(
+                                direction: Axis.vertical,
+                                length: height * 0.06,
+                                dashLength: 5,
+                                dashThickness: 2,
+                                dashColor: kPrimaryColor,
+                              ),
+                              Icon(
+                                Icons.location_on_sharp,
+                                color: kPrimaryColor,
+                                size: 35.0,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: width * 0.05,
+                          ),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                    label: Text(
+                                      "Starting Destination...",
+                                      style: TextStyle(
+                                        color: kSecondaryColor,
+                                      ),
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                                Divider(),
+                                TextFormField(
+                                  decoration: InputDecoration(
+                                    label: Text(
+                                      "Booking Destination...",
+                                      style: TextStyle(
+                                        color: kSecondaryColor,
+                                      ),
+                                    ),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: height * .1),
                   PrimaryButton(

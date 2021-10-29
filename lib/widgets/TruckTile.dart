@@ -12,11 +12,12 @@ class TruckTile extends StatefulWidget {
   final String name;
   final String dimensions;
   final String capacity;
-  final String imageUrl;
   bool selected;
 
+  final String imageUrl = "assets/images/truck-orange.png";
+  final String selectedImageUrl = "assets/images/truck-white.png";
+
   TruckTile(this.id, this.onTap, this.name, this.dimensions, this.capacity,
-      this.imageUrl,
       [this.selected = false]);
 
   @override
@@ -40,6 +41,7 @@ class _TruckTileState extends State<TruckTile> {
         });
       },
       child: Container(
+        height: 116,
         margin: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           color: widget.selected == true ? kPrimaryColor : null,
@@ -51,93 +53,100 @@ class _TruckTileState extends State<TruckTile> {
         ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: ListTile(
-            leading: Padding(
-              padding: const EdgeInsets.only(right: 10.0),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minWidth: width * 0.25,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minWidth: width * 0.25,
+                    ),
+                    child: Image.asset(
+                        widget.selected == true
+                            ? widget.selectedImageUrl
+                            : widget.imageUrl,
+                        fit: BoxFit.cover),
+                  ),
                 ),
-                child: Image.asset(
-                    widget.selected == true
-                        ? 'assets/images/truck-white.png'
-                        : widget.imageUrl,
-                    fit: BoxFit.cover),
-              ),
-            ),
-            title: Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                widget.name,
-                style: TextStyle(
-                  color: widget.selected == true ? Colors.white : kPrimaryColor,
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w700,
+                title: Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    widget.name,
+                    style: TextStyle(
+                      color: widget.selected == true
+                          ? Colors.white
+                          : kPrimaryColor,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      widget.dimensions,
-                      style: TextStyle(
-                        color: widget.selected == true
-                            ? Color(0XFFFFD6BF)
-                            : kSecondaryColor,
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          widget.dimensions,
+                          style: TextStyle(
+                            color: widget.selected == true
+                                ? Color(0XFFFFD6BF)
+                                : kSecondaryColor,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          " Meters",
+                          style: TextStyle(
+                            color: widget.selected == true
+                                ? Color(0XFFFFD6BF)
+                                : kSecondaryColor,
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      " Meters",
-                      style: TextStyle(
-                        color: widget.selected == true
-                            ? Color(0XFFFFD6BF)
-                            : kSecondaryColor,
-                      ),
-                    ),
+                    Row(
+                      children: [
+                        Text(
+                          widget.capacity,
+                          style: TextStyle(
+                            color: widget.selected == true
+                                ? Color(0XFFFFD6BF)
+                                : kSecondaryColor,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          " Maximum",
+                          style: TextStyle(
+                            color: widget.selected == true
+                                ? Color(0XFFFFD6BF)
+                                : kSecondaryColor,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
-                Row(
+                isThreeLine: true,
+                dense: true,
+                trailing: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      widget.capacity,
-                      style: TextStyle(
-                        color: widget.selected == true
-                            ? Color(0XFFFFD6BF)
-                            : kSecondaryColor,
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      " Maximum",
-                      style: TextStyle(
-                        color: widget.selected == true
-                            ? Color(0XFFFFD6BF)
-                            : kSecondaryColor,
-                      ),
-                    ),
+                    Icon(
+                      FontAwesomeIcons.box,
+                      color: widget.selected == true
+                          ? Colors.white
+                          : Colors.grey.withOpacity(0.5),
+                    )
                   ],
-                )
-              ],
-            ),
-            isThreeLine: true,
-            dense: true,
-            trailing: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(
-                  FontAwesomeIcons.box,
-                  color: widget.selected == true
-                      ? Colors.white
-                      : Colors.grey.withOpacity(0.5),
-                )
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
