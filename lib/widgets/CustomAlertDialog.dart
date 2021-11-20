@@ -26,34 +26,33 @@ class CustomAlertDialog extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            height: height * 0.25,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 50.0,
-                ),
-                Text(
-                  text,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 0),
-                  child: ElevatedButton(
-                    child: Text(btnText),
-                    onPressed: onPress,
-                    style: ElevatedButton.styleFrom(primary: kPrimaryColor),
+            height: height * 0.29,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 50.0,
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+                  Text(
+                    text,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 0),
+                    child: ElevatedButton(
+                      child: Text(btnText),
+                      onPressed: onPress,
+                      style: ElevatedButton.styleFrom(primary: kPrimaryColor),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
             child: CircleAvatar(
               backgroundColor: kPrimaryColor,
-              radius: 50.0,
+              radius: height * 0.08,
               child: FaIcon(
                 iconData,
                 color: Colors.white,

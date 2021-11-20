@@ -136,6 +136,9 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   onPress: () {},
                   height: 55.0,
                 ),
+                SizedBox(
+                  height: 20.0,
+                ),
               ],
             ),
           ),
