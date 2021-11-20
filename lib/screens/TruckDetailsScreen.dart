@@ -25,18 +25,19 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leadingWidth: width * 0.45,
+        leadingWidth: width * 0.2,
         titleSpacing: 0,
-        title: Text(
-          "Vehicles",
-          style: TextStyle(
-            color: Colors.black,
-            fontStyle: FontStyle.normal,
+        title: Container(
+          child: Text(
+            "Vehicles",
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              color: Colors.black,
+            ),
           ),
         ),
         centerTitle: true,
-        leading: Padding(
-          padding: EdgeInsets.all(20.0),
+        leading: Center(
           child: GestureDetector(
             onTap: () {
               Get.back();
@@ -45,21 +46,37 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
               "Back",
               style: TextStyle(
                 color: kAccentColor,
+                fontWeight: FontWeight.w500,
+                shadows: [
+                  Shadow(
+                    color: Colors.black.withOpacity(0.4),
+                    offset: Offset(4, 4),
+                    blurRadius: 15,
+                  ),
+                ],
               ),
             ),
           ),
         ),
         actions: [
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: Text(
-                "Filter",
-                style: TextStyle(
-                  color: kAccentColor,
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Text(
+                  "Filter",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: kAccentColor,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black.withOpacity(0.4),
+                        offset: Offset(4, 4),
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -27,8 +27,7 @@ void main() {
       ),
     ),
     getPages: routes,
-    // initialRoute: LogoScreen.routeName,
-    initialRoute: TrackerScreen.routeName,
+    initialRoute: LogoScreen.routeName,
     debugShowCheckedModeBanner: false,
   ));
 }

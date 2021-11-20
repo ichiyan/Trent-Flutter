@@ -11,7 +11,28 @@ class TrackerScreen extends StatefulWidget {
 }
 
 class _TrackerScreenState extends State<TrackerScreen> {
+  List<Marker> sampleMarkers = [];
+
   @override
+  void initState() {
+    super.initState();
+    sampleMarkers.add(Marker(
+      markerId: MarkerId('Marker1'),
+      draggable: false,
+      infoWindow: InfoWindow(title: "My Location"),
+      position: LatLng(35.658581, 139.745438),
+    ));
+    sampleMarkers.add(Marker(
+      markerId: MarkerId('Marker2'),
+      draggable: false,
+      infoWindow: InfoWindow(title: "Truck"),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueBlue,
+      ),
+      position: LatLng(35.658990, 139.745725),
+    ));
+  }
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -42,6 +63,7 @@ class _TrackerScreenState extends State<TrackerScreen> {
                   zoom: 18,
                 ),
                 onMapCreated: (GoogleMapController controller) {},
+                markers: Set.from(sampleMarkers),
               ),
             )
           ],
