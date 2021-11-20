@@ -1,5 +1,7 @@
 import 'package:basecode/constants.dart';
 import 'package:basecode/models/Truck.dart';
+import 'package:basecode/widgets/PrimaryButton.dart';
+import 'package:basecode/widgets/SecondaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -93,13 +95,19 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   child: Text(
                     widget.truck.title,
                     style: TextStyle(
-                      fontWeight: FontWeight.w600,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-                Text(
-                  widget.truck.status,
-                  style: TextStyle(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Status: " + widget.truck.status.toUpperCase(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -111,6 +119,22 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                       height: 1.25,
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+                PrimaryButton(
+                  text: "Book Truck Services",
+                  onPress: () {},
+                  height: 55.0,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                SecondaryButton(
+                  text: "Check Available Dates",
+                  onPress: () {},
+                  height: 55.0,
                 ),
               ],
             ),

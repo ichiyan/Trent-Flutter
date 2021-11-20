@@ -1,6 +1,7 @@
 import 'package:basecode/screens/BookingScreen.dart';
 import 'package:basecode/screens/DashboardScreen.dart';
 import 'package:basecode/screens/TruckCatalogScreen.dart';
+import 'package:basecode/widgets/BottomNavBar.dart';
 import 'package:basecode/widgets/CustomTextFormField.dart';
 import 'package:basecode/widgets/PasswordField.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
@@ -71,7 +72,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     iconData: null,
                     onPress: () {
                       //add auth logic here
-                      Get.toNamed(TruckCatalogScreen.routeName);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BottomNavBar()));
                     },
                     height: 50,
                   ),

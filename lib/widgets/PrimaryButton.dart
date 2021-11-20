@@ -8,7 +8,7 @@ class PrimaryButton extends StatelessWidget {
 
   PrimaryButton({
     @required this.text,
-    @required this.iconData,
+    this.iconData,
     @required this.onPress,
     @required this.height,
   });
