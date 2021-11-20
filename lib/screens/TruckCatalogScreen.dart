@@ -29,8 +29,8 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
         title: Text(
           "Vehicles",
           style: TextStyle(
-            color: Colors.black,
             fontStyle: FontStyle.normal,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
@@ -88,10 +88,10 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
               decoration: BoxDecoration(
                 color: Color(0xFFF6F6F6),
                 borderRadius: BorderRadius.circular(30.0),
-                // border: Border.all(
-                //   color: Color(0xFFE8E8E8),
-                //   width: 1.0,
-                // ),
+                border: Border.all(
+                  color: Color(0xFFE8E8E8),
+                  width: 1.5,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,

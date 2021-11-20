@@ -1,3 +1,4 @@
+import 'package:basecode/screens/TrackerScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import './routes.dart';
@@ -14,9 +15,11 @@ void main() {
       textTheme: TextTheme(
         headline5: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
         headline6: TextStyle(
-            fontSize: 36.0,
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w600),
+          fontSize: 36.0,
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
         bodyText2: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.w500,
@@ -24,7 +27,8 @@ void main() {
       ),
     ),
     getPages: routes,
-    initialRoute: LogoScreen.routeName,
+    // initialRoute: LogoScreen.routeName,
+    initialRoute: TrackerScreen.routeName,
     debugShowCheckedModeBanner: false,
   ));
 }
