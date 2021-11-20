@@ -31,13 +31,6 @@ class _BookingScreenState extends State<BookingScreen> {
             width: width * .45,
           ),
           centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.menu,
-              color: Theme.of(context).accentColor,
-            ),
-          ),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -143,7 +136,7 @@ class _BookingScreenState extends State<BookingScreen> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 50.0),
+                      padding: const EdgeInsets.only(bottom: 100.0),
                       child: PrimaryButton(
                         text: "Select Vehicles",
                         iconData: null,

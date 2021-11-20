@@ -1,6 +1,12 @@
+import 'dart:async';
+
 import 'package:basecode/constants.dart';
+import 'package:basecode/screens/TrackerScreen.dart';
+import 'package:basecode/widgets/CustomAlertDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class BookingDetailsScreen extends StatefulWidget {
   static String routeName = "/bookingDetails";
@@ -14,6 +20,20 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
+    Timer(Duration(seconds: 2), () {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return CustomAlertDialog(
+              text: "We have found you a truck.",
+              btnText: "Confirm",
+              iconData: FontAwesomeIcons.truck,
+              onPress: navigateToTracker,
+            );
+          });
+    });
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -24,13 +44,6 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
             width: width * .45,
           ),
           centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.menu,
-              color: Theme.of(context).accentColor,
-            ),
-          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -186,4 +199,8 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
       ),
     );
   }
+}
+
+navigateToTracker() {
+  Get.toNamed(TrackerScreen.routeName);
 }

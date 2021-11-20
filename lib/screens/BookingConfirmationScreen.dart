@@ -28,13 +28,6 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
             width: width * .45,
           ),
           centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.menu,
-              color: Theme.of(context).accentColor,
-            ),
-          ),
         ),
         body: SingleChildScrollView(
           child: Padding(

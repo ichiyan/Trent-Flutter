@@ -26,13 +26,6 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
             width: width * .45,
           ),
           centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.menu,
-              color: Theme.of(context).accentColor,
-            ),
-          ),
         ),
         body: SingleChildScrollView(
           child: Center(

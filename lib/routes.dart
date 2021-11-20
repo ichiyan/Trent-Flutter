@@ -12,6 +12,7 @@ import 'package:basecode/screens/MessagesScreen.dart';
 import 'package:basecode/screens/RegistrationScreen.dart';
 import 'package:basecode/screens/SettingsScreen.dart';
 import 'package:basecode/screens/SignupScreen.dart';
+import 'package:basecode/screens/TrackerScreen.dart';
 import 'package:basecode/screens/TransactionHistoryScreen.dart';
 import 'package:basecode/screens/TruckCatalogScreen.dart';
 import 'package:basecode/screens/TruckDetailsScreen.dart';
@@ -45,4 +46,5 @@ final List<GetPage<dynamic>> routes = [
   GetPage(
       name: BookingDetailsScreen.routeName, page: () => BookingDetailsScreen()),
   GetPage(name: TruckCatalogScreen.routeName, page: () => TruckCatalogScreen()),
+  GetPage(name: TrackerScreen.routeName, page: () => TrackerScreen()),
 ];
