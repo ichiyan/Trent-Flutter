@@ -13,6 +13,8 @@ class TruckCatalogScreen extends StatefulWidget {
 }
 
 class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
+  TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -69,6 +71,24 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
             width: width * 0.95,
             child: Column(
               children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF6F6F6),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(
+                      color: Color(0xFFE8E8E8),
+                      width: 1.5,
+                    ),
+                  ),
+                  child: TextField(
+                    controller: textEditingController,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(15.0),
+                      hintText: "Search",
+                    ),
+                  ),
+                ),
                 ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
