@@ -1,7 +1,9 @@
 import 'package:basecode/constants.dart';
 import 'package:basecode/screens/BookingScreen.dart';
 import 'package:basecode/screens/TruckCatalogScreen.dart';
+import 'package:basecode/screens/UserProfileScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -16,6 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<Widget> tabs = <Widget>[
     TruckCatalogScreen(),
     BookingScreen(),
+    UserProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -42,13 +45,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         items: [
           SalomonBottomBarItem(
-            icon: Icon(Icons.home_rounded),
-            title: Text("Home"),
+            icon: FaIcon(FontAwesomeIcons.bookOpen),
+            title: Text("Catalog"),
             selectedColor: kPrimaryColor,
           ),
           SalomonBottomBarItem(
-            icon: Icon(Icons.favorite_border_rounded),
-            title: Text("Likes"),
+            icon: FaIcon(FontAwesomeIcons.truckMoving),
+            title: Text("Book"),
+            selectedColor: kPrimaryColor,
+          ),
+          SalomonBottomBarItem(
+            icon: FaIcon(FontAwesomeIcons.userAlt),
+            title: Text("Profile"),
             selectedColor: kPrimaryColor,
           ),
         ],
