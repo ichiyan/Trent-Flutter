@@ -44,6 +44,13 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
               "Back",
               style: TextStyle(
                 color: kAccentColor,
+                shadows: [
+                  Shadow(
+                    color: Colors.black.withOpacity(0.3),
+                    offset: Offset(15, 15),
+                    blurRadius: 15,
+                  ),
+                ],
               ),
             ),
           ),
@@ -59,11 +66,56 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
                 "Filter",
                 style: TextStyle(
                   color: kAccentColor,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black.withOpacity(0.3),
+                      offset: Offset(15, 15),
+                      blurRadius: 15,
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(height * 0.09),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 12.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xFFF6F6F6),
+                borderRadius: BorderRadius.circular(30.0),
+                // border: Border.all(
+                //   color: Color(0xFFE8E8E8),
+                //   width: 1.0,
+                // ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    spreadRadius: -10.0,
+                    blurRadius: 10.0,
+                    offset: Offset(0.0, 10.0),
+                  )
+                ],
+              ),
+              child: TextField(
+                controller: textEditingController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                  contentPadding: EdgeInsets.all(15.0),
+                  hintText: "Search",
+                  hintStyle: TextStyle(
+                      color: Color(0xFFBDBDBD), fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -71,24 +123,6 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
             width: width * 0.95,
             child: Column(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF6F6F6),
-                    borderRadius: BorderRadius.circular(30.0),
-                    border: Border.all(
-                      color: Color(0xFFE8E8E8),
-                      width: 1.5,
-                    ),
-                  ),
-                  child: TextField(
-                    controller: textEditingController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.all(15.0),
-                      hintText: "Search",
-                    ),
-                  ),
-                ),
                 ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
