@@ -44,6 +44,7 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
               "Back",
               style: TextStyle(
                 color: kAccentColor,
+                fontWeight: FontWeight.w500,
                 shadows: [
                   Shadow(
                     color: Colors.black.withOpacity(0.3),
@@ -65,6 +66,7 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
               child: Text(
                 "Filter",
                 style: TextStyle(
+                  fontWeight: FontWeight.w500,
                   color: kAccentColor,
                   shadows: [
                     Shadow(

@@ -187,7 +187,7 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
                       "1,000.00",
                       style: TextStyle(
                         fontSize: 36.0,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],

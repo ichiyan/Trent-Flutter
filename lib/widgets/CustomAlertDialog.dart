@@ -56,7 +56,7 @@ class CustomAlertDialog extends StatelessWidget {
               child: FaIcon(
                 iconData,
                 color: Colors.white,
-                size: 28.0,
+                size: height * 0.056,
               ),
             ),
             top: -50,
