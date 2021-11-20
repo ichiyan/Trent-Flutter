@@ -1,5 +1,4 @@
 import 'package:basecode/screens/BookingConfirmationScreen.dart';
-import 'package:basecode/widgets/CustomFloatingActionBtn.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/TruckTile.dart';
 import 'package:flutter/material.dart';
