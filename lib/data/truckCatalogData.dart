@@ -19,7 +19,9 @@ List<Truck> trucks = [
     status: "available",
     images: [
       "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
+      "https://cdn.autoversed.com/autoversed/wp-content/uploads/2019/12/shutterstock_727973578-scaled.jpg",
       "https://www.thestreet.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY3NTM5MzU5NjIyMDQ3MTEx/which-full-size-pickup-truck-should-you-buy.jpg",
+      "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
       "https://cdn.hiconsumption.com/wp-content/uploads/2020/09/Best-High-Performance-Pickups-0-Hero.jpg"
     ],
     title: "Truck Title 2",

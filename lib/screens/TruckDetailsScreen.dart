@@ -18,6 +18,7 @@ class TruckDetailsScreen extends StatefulWidget {
 }
 
 class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
+  final controller = CarouselController();
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -98,6 +99,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   height: 20.0,
                 ),
                 CarouselSlider.builder(
+                  carouselController: controller,
                   itemCount: widget.truck.images.length,
                   itemBuilder: (context, index, realIndex) {
                     final img = widget.truck.images[index];
@@ -106,6 +108,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   options: CarouselOptions(
                     height: height * 0.3,
                     // viewportFraction: 1,
+                    enableInfiniteScroll: false,
                     enlargeCenterPage: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
                     onPageChanged: (index, reason) =>
@@ -113,7 +116,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(top: 14.0, bottom: 8.0),
                   child: Align(
                     alignment: Alignment.center,
                     child: AnimatedSmoothIndicator(
@@ -125,6 +128,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                         dotColor: Color(0xFFE8E8E8),
                         activeDotColor: kPrimaryColor,
                       ),
+                      onDotClicked: (index) => controller.animateToPage(index),
                     ),
                   ),
                 ),

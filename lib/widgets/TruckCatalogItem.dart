@@ -23,6 +23,7 @@ class TruckCatalogItem extends StatefulWidget {
 }
 
 class _TruckCatalogItemState extends State<TruckCatalogItem> {
+  final controller = CarouselController();
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -47,18 +48,20 @@ class _TruckCatalogItemState extends State<TruckCatalogItem> {
                   dotColor: Color(0xFFE8E8E8),
                   activeDotColor: kPrimaryColor,
                 ),
+                onDotClicked: (index) => controller.animateToPage(index),
               ),
             ),
           ),
           CarouselSlider.builder(
+            carouselController: controller,
             itemCount: widget.images.length,
             itemBuilder: (context, index, realIndex) {
-              final img = widget.images[index];
-              return buildImage(img, index);
+              return buildImage(widget.images[index]);
             },
             options: CarouselOptions(
               // height: height * 0.28,
               // viewportFraction: 1,
+              enableInfiniteScroll: false,
               enlargeCenterPage: true,
               enlargeStrategy: CenterPageEnlargeStrategy.height,
               onPageChanged: (index, reason) =>
@@ -103,7 +106,7 @@ class _TruckCatalogItemState extends State<TruckCatalogItem> {
     );
   }
 
-  Widget buildImage(String urlImg, int index) => Card(
+  Widget buildImage(String urlImg) => Card(
         clipBehavior: Clip.antiAlias,
         shadowColor: Colors.grey,
         elevation: 8,
