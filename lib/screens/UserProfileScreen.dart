@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:basecode/widgets/BookingTile.dart';
+import 'package:basecode/widgets/Review.dart';
 import 'package:flutter/material.dart';
 import 'package:basecode/widgets/Avatar.dart';
 import 'package:basecode/constants.dart';
@@ -114,7 +115,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: height * 0.1,
+                    height: height * 0.09,
                   ),
                   Text(
                     "Victoria Robertson",
@@ -155,7 +156,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(2.5),
+                            padding: const EdgeInsets.all(2.0),
                             child: TabBar(
                                 indicator: BoxDecoration(
                                   color: Colors.white,
@@ -186,7 +187,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                           height: height * 0.02,
                         ),
                         SizedBox(
-                          height: height * 0.3,
+                          height: height * 0.4,
                           child: TabBarView(
                             children: [
                               ListView.builder(
@@ -204,9 +205,20 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                               ),
                               ListView(
                                 children: [
-                                  Text("TEST2"),
-                                  Text("TEST2"),
-                                  Text("TEST2"),
+                                  Review(
+                                    truckName: "Truck 1",
+                                    dateBooked: "March 1, 2020",
+                                    rating: 2.5,
+                                    image:
+                                        "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
+                                  ),
+                                  Review(
+                                    truckName: "Truck 2",
+                                    dateBooked: "December 1, 2020",
+                                    rating: 4,
+                                    image:
+                                        "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
+                                  ),
                                 ],
                               ),
                             ],
