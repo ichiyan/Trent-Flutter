@@ -135,7 +135,7 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
                       return GestureDetector(
                         child: TruckCatalogItem(
                           truckId: trucks[index].truckId,
-                          image: trucks[index].image,
+                          images: trucks[index].images,
                           title: trucks[index].title,
                           body: trucks[index].body,
                           timePassed: trucks[index].timePassed,

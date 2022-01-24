@@ -10,7 +10,7 @@ class PrimaryButton extends StatelessWidget {
     @required this.text,
     this.iconData,
     @required this.onPress,
-    @required this.height,
+    this.height,
   });
 
   @override

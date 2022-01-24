@@ -1,7 +1,7 @@
 class Truck {
   int truckId;
   String status;
-  String image;
+  List<String> images;
   String title;
   String body;
   String timePassed;
@@ -9,7 +9,7 @@ class Truck {
   Truck(
       {this.truckId,
       this.status,
-      this.image,
+      this.images,
       this.title,
       this.body,
       this.timePassed});

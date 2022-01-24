@@ -109,7 +109,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                         ),
                       ),
                       Positioned(
-                        child: Avatar(158.0, imageUrl),
+                        child: Avatar(height * 0.2, imageUrl),
                         bottom: -50,
                       ),
                     ],

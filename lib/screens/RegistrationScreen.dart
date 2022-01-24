@@ -98,7 +98,6 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                     onPress: () {
                       print("Register button");
                     },
-                    height: null,
                   ),
                   SizedBox(
                     height: 20.0,
