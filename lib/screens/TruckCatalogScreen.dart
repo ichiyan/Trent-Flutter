@@ -1,6 +1,6 @@
 import 'package:basecode/constants.dart';
 import 'package:basecode/screens/TruckDetailsScreen.dart';
-import 'package:basecode/truckCatalogData.dart';
+import 'package:basecode/data/truckCatalogData.dart';
 import 'package:basecode/widgets/TruckCatalogItem.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

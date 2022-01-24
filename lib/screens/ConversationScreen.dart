@@ -1,4 +1,4 @@
-import 'package:basecode/data.dart';
+import 'package:basecode/data/data.dart';
 import 'package:basecode/widgets/Chat.dart';
 import 'package:basecode/widgets/ChatTextField.dart';
 import 'package:basecode/widgets/StickyBottomAppBar.dart';
