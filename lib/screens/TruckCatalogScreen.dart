@@ -22,6 +22,7 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        toolbarHeight: height * 0.12,
         elevation: 0,
         backgroundColor: Colors.transparent,
         leadingWidth: width * 0.2,
