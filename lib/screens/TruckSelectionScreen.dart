@@ -1,8 +1,10 @@
+import 'package:basecode/constants.dart';
 import 'package:basecode/screens/BookingConfirmationScreen.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/TruckTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TruckSelectionScreen extends StatefulWidget {
   static String routeName = "/truckSelection";
@@ -26,6 +28,11 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
             width: width * .45,
           ),
           centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new),
+            color: kAccentColor,
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -105,7 +112,12 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
               PrimaryButton(
                 text: "Select Vehicles",
                 iconData: null,
-                onPress: navigateToConfirmation,
+                onPress: () {
+                  pushNewScreen(context,
+                      screen: BookingConfirmationScreen(),
+                      withNavBar: true,
+                      pageTransitionAnimation: PageTransitionAnimation.fade);
+                },
                 height: 48,
               ),
               SizedBox(
@@ -116,13 +128,5 @@ class _TruckSelectionScreenState extends State<TruckSelectionScreen> {
         ),
       ),
     );
-  }
-
-  navigateToPage(String routeName) {
-    Get.toNamed(routeName);
-  }
-
-  navigateToConfirmation() {
-    Get.toNamed(BookingConfirmationScreen.routeName);
   }
 }

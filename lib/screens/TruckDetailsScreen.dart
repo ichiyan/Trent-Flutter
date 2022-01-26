@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:basecode/screens/CalendarScreen.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class TruckDetailsScreen extends StatefulWidget {
@@ -46,7 +47,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
         leading: Center(
           child: GestureDetector(
             onTap: () {
-              Get.back();
+              Navigator.pop(context);
             },
             child: Text(
               "Back",
@@ -180,13 +181,10 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                 SecondaryButton(
                   text: "Check Available Dates",
                   onPress: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) =>
-                    //             CalendarScreen(truck: widget.truck)));
-                    Get.toNamed(CalendarScreen.routeName,
-                        arguments: widget.truck);
+                    pushNewScreen(context,
+                        screen: CalendarScreen(truck: widget.truck),
+                        withNavBar: true,
+                        pageTransitionAnimation: PageTransitionAnimation.fade);
                   },
                   height: 55.0,
                 ),

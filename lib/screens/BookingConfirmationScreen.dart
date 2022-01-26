@@ -4,6 +4,7 @@ import 'package:basecode/widgets/ConfirmationDetailTile.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class BookingConfirmationScreen extends StatefulWidget {
   static String routeName = "/bookingConfirmation";
@@ -28,6 +29,11 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
             width: width * .45,
           ),
           centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new),
+            color: kAccentColor,
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -133,7 +139,10 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
                   text: "Place Order",
                   iconData: null,
                   onPress: () {
-                    navigateToPage(BookingDetailsScreen.routeName);
+                    pushNewScreen(context,
+                        screen: BookingDetailsScreen(),
+                        withNavBar: true,
+                        pageTransitionAnimation: PageTransitionAnimation.fade);
                   },
                   height: 61.0),
               SizedBox(
@@ -144,9 +153,5 @@ class _BookingConfirmationScreenState extends State<BookingConfirmationScreen> {
         ),
       ),
     );
-  }
-
-  navigateToPage(String routeName) {
-    Get.toNamed(routeName);
   }
 }

@@ -31,12 +31,12 @@ dependencies:
   get: ^4.3.8
   flutter_chat_bubble: ^2.0.0
   flutter_dash: ^0.0.1
-  salomon_bottom_bar: ^3.1.0
   google_maps_flutter: ^2.1.1
   flutter_rating_bar: ^4.0.0
   carousel_slider: ^4.0.0
   smooth_page_indicator: ^1.0.0+2
   table_calendar: ^3.0.3
+  persistent_bottom_nav_bar: ^4.0.2
 
 dev_dependencies:
   flutter_test:

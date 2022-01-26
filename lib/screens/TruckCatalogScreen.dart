@@ -4,6 +4,7 @@ import 'package:basecode/data/truckCatalogData.dart';
 import 'package:basecode/widgets/TruckCatalogItem.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class TruckCatalogScreen extends StatefulWidget {
   static String routeName = "/truckCatalog";
@@ -141,13 +142,14 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
                           timePassed: trucks[index].timePassed,
                         ),
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => TruckDetailsScreen(
-                          //             truck: trucks[index])));
-                          Get.toNamed(TruckDetailsScreen.routeName,
-                              arguments: trucks[index]);
+                          // Get.toNamed(TruckDetailsScreen.routeName,
+                          //     arguments: trucks[index]);
+
+                          pushNewScreen(context,
+                              screen: TruckDetailsScreen(truck: trucks[index]),
+                              withNavBar: true,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.fade);
                         },
                       );
                     }),

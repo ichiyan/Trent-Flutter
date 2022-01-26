@@ -44,6 +44,11 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
             width: width * .45,
           ),
           centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new),
+            color: kAccentColor,
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(

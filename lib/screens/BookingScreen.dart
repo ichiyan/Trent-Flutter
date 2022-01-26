@@ -5,6 +5,7 @@ import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class BookingScreen extends StatefulWidget {
   static String routeName = "/booking";
@@ -141,7 +142,12 @@ class _BookingScreenState extends State<BookingScreen> {
                         text: "Select Vehicles",
                         iconData: null,
                         onPress: () {
-                          navigateToPage(TruckSelectionScreen.routeName);
+                          // navigateToPage(TruckSelectionScreen.routeName);
+                          pushNewScreen(context,
+                              screen: TruckSelectionScreen(),
+                              withNavBar: true,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.fade);
                         },
                         height: 48,
                       ),
@@ -154,9 +160,5 @@ class _BookingScreenState extends State<BookingScreen> {
         ),
       ),
     );
-  }
-
-  navigateToPage(String routeName) {
-    Get.toNamed(routeName);
   }
 }

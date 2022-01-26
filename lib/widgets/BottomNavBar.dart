@@ -4,63 +4,68 @@ import 'package:basecode/screens/TruckCatalogScreen.dart';
 import 'package:basecode/screens/UserProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
-class BottomNavBar extends StatefulWidget {
-  @override
-  _BottomNavBarState createState() => _BottomNavBarState();
-}
+class BottomNavBar extends StatelessWidget {
+  List<Widget> _buildScreens() {
+    return [
+      TruckCatalogScreen(),
+      BookingScreen(),
+      UserProfileScreen(),
+    ];
+  }
 
-class _BottomNavBarState extends State<BottomNavBar> {
-  PageController pageController = PageController(initialPage: 0);
-  int _selectedIndex = 0;
-
-  List<Widget> tabs = <Widget>[
-    TruckCatalogScreen(),
-    BookingScreen(),
-    UserProfileScreen(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (pageController.hasClients) {
-          pageController.animateToPage(index,
-              duration: Duration(milliseconds: 400), curve: Curves.ease);
-        }
-      });
-    });
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: FaIcon(FontAwesomeIcons.bookOpen),
+        title: ("Catalog"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: Colors.black,
+      ),
+      PersistentBottomNavBarItem(
+        icon: FaIcon(FontAwesomeIcons.truckMoving),
+        title: ("Book"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: Colors.black,
+      ),
+      PersistentBottomNavBarItem(
+        icon: FaIcon(FontAwesomeIcons.userAlt),
+        title: ("Profile"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: Colors.black,
+      ),
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: tabs[_selectedIndex],
-      bottomNavigationBar: SalomonBottomBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          _onItemTapped(index);
-        },
-        items: [
-          SalomonBottomBarItem(
-            icon: FaIcon(FontAwesomeIcons.bookOpen),
-            title: Text("Catalog"),
-            selectedColor: kPrimaryColor,
-          ),
-          SalomonBottomBarItem(
-            icon: FaIcon(FontAwesomeIcons.truckMoving),
-            title: Text("Book"),
-            selectedColor: kPrimaryColor,
-          ),
-          SalomonBottomBarItem(
-            icon: FaIcon(FontAwesomeIcons.userAlt),
-            title: Text("Profile"),
-            selectedColor: kPrimaryColor,
-          ),
-        ],
+    PersistentTabController _controller;
+    _controller = PersistentTabController(initialIndex: 0);
+
+    return PersistentTabView(
+      context,
+      controller: _controller,
+      screens: _buildScreens(),
+      items: _navBarsItems(),
+      confineInSafeArea: true,
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        colorBehindNavBar: Colors.white,
       ),
+      popAllScreensOnTapOfSelectedTab: true,
+      popActionScreens: PopActionScreensType.all,
+      itemAnimationProperties: ItemAnimationProperties(
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease,
+      ),
+      screenTransitionAnimation: ScreenTransitionAnimation(
+        animateTabTransition: true,
+        curve: Curves.ease,
+        duration: Duration(milliseconds: 200),
+      ),
+      navBarStyle: NavBarStyle.style1,
     );
   }
 }
