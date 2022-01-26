@@ -3,6 +3,7 @@ import 'package:basecode/models/Truck.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/SecondaryButton.dart';
 import 'package:flutter/material.dart';
+import 'package:basecode/screens/CalendarScreen.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -178,7 +179,15 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                 ),
                 SecondaryButton(
                   text: "Check Available Dates",
-                  onPress: () {},
+                  onPress: () {
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) =>
+                    //             CalendarScreen(truck: widget.truck)));
+                    Get.toNamed(CalendarScreen.routeName,
+                        arguments: widget.truck);
+                  },
                   height: 55.0,
                 ),
                 SizedBox(

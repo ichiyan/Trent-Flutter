@@ -141,11 +141,13 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
                           timePassed: trucks[index].timePassed,
                         ),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => TruckDetailsScreen(
-                                      truck: trucks[index])));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => TruckDetailsScreen(
+                          //             truck: trucks[index])));
+                          Get.toNamed(TruckDetailsScreen.routeName,
+                              arguments: trucks[index]);
                         },
                       );
                     }),
