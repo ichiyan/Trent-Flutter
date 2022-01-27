@@ -1,3 +1,4 @@
+import 'package:basecode/constants.dart';
 import 'package:basecode/screens/LoginScreen.dart';
 import 'package:basecode/widgets/CustomTextFormField.dart';
 import 'package:basecode/widgets/PasswordField.dart';
@@ -19,40 +20,61 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Sign Up",
-          style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+        toolbarHeight: height * 0.12,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leadingWidth: width * 0.2,
+        titleSpacing: 0,
+        title: Container(
+          child: Text(
+            "Sign Up",
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              color: Colors.black,
+            ),
+          ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
-          child: Icon(
-            Icons.chevron_left,
-            size: 35.0,
+        leading: Center(
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              Icons.close,
+              color: kSecondaryColor,
+            ),
           ),
         ),
         actions: [
-          GestureDetector(
-            onTap: () {
-              Get.toNamed(LoginScreen.routeName);
-            },
-            child: Center(
-              child: Container(
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Get.offNamed(LoginScreen.routeName);
+                },
                 child: Text(
-                  "Login",
+                  "Log In",
                   style: TextStyle(
-                      fontSize: 18.0, color: Theme.of(context).accentColor),
+                    fontWeight: FontWeight.w500,
+                    color: kAccentColor2,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black.withOpacity(0.4),
+                        offset: Offset(4, 4),
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
                 ),
-                margin: EdgeInsets.only(right: 15.0),
               ),
             ),
-          )
+          ),
         ],
-        elevation: 0,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -110,7 +132,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         "Forgot Password?",
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: Theme.of(context).accentColor,
+                            color: kAccentColor2,
                             fontWeight: FontWeight.bold),
                       ),
                     )),

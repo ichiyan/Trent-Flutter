@@ -1,6 +1,6 @@
-import 'package:basecode/screens/BookingScreen.dart';
-import 'package:basecode/screens/DashboardScreen.dart';
-import 'package:basecode/screens/TruckCatalogScreen.dart';
+import 'package:basecode/constants.dart';
+import 'package:basecode/screens/RegistrationScreen.dart';
+import 'package:basecode/screens/SignupScreen.dart';
 import 'package:basecode/widgets/BottomNavBar.dart';
 import 'package:basecode/widgets/CustomTextFormField.dart';
 import 'package:basecode/widgets/PasswordField.dart';
@@ -23,23 +23,61 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Log In",
-          style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        leading: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
-          child: Icon(
-            Icons.chevron_left,
-            size: 35.0,
+        toolbarHeight: height * 0.12,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leadingWidth: width * 0.2,
+        titleSpacing: 0,
+        title: Container(
+          child: Text(
+            "Log In",
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              color: Colors.black,
+            ),
           ),
         ),
-        elevation: 0,
+        centerTitle: true,
+        leading: Center(
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              Icons.close,
+              color: kSecondaryColor,
+            ),
+          ),
+        ),
+        actions: [
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Get.offNamed(SignupScreen.routeName);
+                },
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: kAccentColor2,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black.withOpacity(0.4),
+                        offset: Offset(4, 4),
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -69,7 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   PrimaryButton(
                     text: "Log In",
-                    iconData: null,
                     onPress: () {
                       //add auth logic here
                       Navigator.push(
@@ -77,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           MaterialPageRoute(
                               builder: (context) => BottomNavBar()));
                     },
-                    height: 50,
+                    height: 60,
                   ),
                   SizedBox(
                     height: 20.0,
@@ -92,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Forgot Password?",
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: Theme.of(context).accentColor,
+                            color: kAccentColor2,
                             fontWeight: FontWeight.bold),
                       ),
                     )),

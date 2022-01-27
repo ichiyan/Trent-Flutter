@@ -1,3 +1,4 @@
+import 'package:basecode/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -26,7 +27,15 @@ class PasswordField extends StatelessWidget {
             child: Text(
               obscureText ? "Show" : "Hide",
               style: TextStyle(
-                color: Theme.of(context).accentColor,
+                fontWeight: FontWeight.bold,
+                color: kAccentColor2,
+                shadows: [
+                  Shadow(
+                    color: Colors.black.withOpacity(0.3),
+                    offset: Offset(4, 4),
+                    blurRadius: 15,
+                  ),
+                ],
               ),
             ),
           ),
