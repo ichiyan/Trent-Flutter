@@ -1,5 +1,6 @@
 import 'package:basecode/constants.dart';
 import 'package:basecode/screens/BookingScreen.dart';
+import 'package:basecode/screens/InsightsScreen.dart';
 import 'package:basecode/screens/TruckCatalogScreen.dart';
 import 'package:basecode/screens/UserProfileScreen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class BottomNavBar extends StatelessWidget {
       TruckCatalogScreen(),
       BookingScreen(),
       UserProfileScreen(),
+      InsightsScreen(),
     ];
   }
 
@@ -33,6 +35,12 @@ class BottomNavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: FaIcon(FontAwesomeIcons.userAlt),
         title: ("Profile"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: Colors.black,
+      ),
+      PersistentBottomNavBarItem(
+        icon: FaIcon(FontAwesomeIcons.searchDollar),
+        title: ("Temp"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: Colors.black,
       ),

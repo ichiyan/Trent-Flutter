@@ -45,7 +45,7 @@ class _ReviewState extends State<Review> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: width * 0.55,
+                  width: width * 0.5,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Text(

@@ -142,9 +142,6 @@ class _TruckCatalogScreenState extends State<TruckCatalogScreen> {
                           timePassed: trucks[index].timePassed,
                         ),
                         onTap: () {
-                          // Get.toNamed(TruckDetailsScreen.routeName,
-                          //     arguments: trucks[index]);
-
                           pushNewScreen(context,
                               screen: TruckDetailsScreen(truck: trucks[index]),
                               withNavBar: true,

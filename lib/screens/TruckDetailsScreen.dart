@@ -109,7 +109,7 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                   },
                   options: CarouselOptions(
                     height: height * 0.3,
-                    // viewportFraction: 1,
+                    viewportFraction: widget.truck.images.length > 1 ? 0.8 : 1,
                     enableInfiniteScroll: false,
                     enlargeCenterPage: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -117,23 +117,25 @@ class _TruckDetailsScreenState extends State<TruckDetailsScreen> {
                         setState(() => activeIndex = index),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 14.0, bottom: 8.0),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: AnimatedSmoothIndicator(
-                      activeIndex: activeIndex,
-                      count: widget.truck.images.length,
-                      effect: WormEffect(
-                        dotWidth: 12,
-                        dotHeight: 12,
-                        dotColor: Color(0xFFE8E8E8),
-                        activeDotColor: kPrimaryColor,
+                if (widget.truck.images.length > 1)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0, bottom: 8.0),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: AnimatedSmoothIndicator(
+                        activeIndex: activeIndex,
+                        count: widget.truck.images.length,
+                        effect: WormEffect(
+                          dotWidth: 12,
+                          dotHeight: 12,
+                          dotColor: Color(0xFFE8E8E8),
+                          activeDotColor: kPrimaryColor,
+                        ),
+                        onDotClicked: (index) =>
+                            controller.animateToPage(index),
                       ),
-                      onDotClicked: (index) => controller.animateToPage(index),
                     ),
                   ),
-                ),
                 SizedBox(
                   height: 10.0,
                 ),

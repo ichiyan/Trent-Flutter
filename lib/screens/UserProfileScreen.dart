@@ -143,42 +143,45 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Color(0xF666666),
-                            borderRadius: BorderRadius.circular(50),
-                            border: Border.all(
-                              color: Colors.grey[300],
-                              width: 1.5,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Color(0xF666666),
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border.all(
+                                color: Colors.grey[300],
+                                width: 1.5,
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: TabBar(
-                                indicator: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                labelColor: Color(0xFFF58F29),
-                                labelStyle: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  shadows: [
-                                    Shadow(
-                                      color: Colors.black.withOpacity(0.3),
-                                      offset: Offset(4, 4),
-                                      blurRadius: 15,
-                                    ),
-                                  ],
-                                ),
-                                unselectedLabelColor: kSecondaryColor,
-                                unselectedLabelStyle: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                tabs: [
-                                  Tab(text: "Bookings"),
-                                  Tab(text: "Reviews"),
-                                ]),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: TabBar(
+                                  indicator: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  labelColor: Color(0xFFF58F29),
+                                  labelStyle: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    shadows: [
+                                      Shadow(
+                                        color: Colors.black.withOpacity(0.3),
+                                        offset: Offset(4, 4),
+                                        blurRadius: 15,
+                                      ),
+                                    ],
+                                  ),
+                                  unselectedLabelColor: kSecondaryColor,
+                                  unselectedLabelStyle: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  tabs: [
+                                    Tab(text: "Bookings"),
+                                    Tab(text: "Reviews"),
+                                  ]),
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -201,23 +204,26 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   );
                                 },
                               ),
-                              ListView(
-                                children: [
-                                  Review(
-                                    truckName: "Truck 1",
-                                    dateBooked: "March 1, 2020",
-                                    rating: 2.5,
-                                    image:
-                                        "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
-                                  ),
-                                  Review(
-                                    truckName: "Truck 2",
-                                    dateBooked: "December 1, 2020",
-                                    rating: 4,
-                                    image:
-                                        "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
-                                  ),
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ListView(
+                                  children: [
+                                    Review(
+                                      truckName: "Truck 1",
+                                      dateBooked: "March 1, 2020",
+                                      rating: 2.5,
+                                      image:
+                                          "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
+                                    ),
+                                    Review(
+                                      truckName: "Truck 2",
+                                      dateBooked: "December 1, 2020",
+                                      rating: 4,
+                                      image:
+                                          "https://cdn.motor1.com/images/mgl/3KVzA/s1/fastest-trucks-lead.jpg",
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

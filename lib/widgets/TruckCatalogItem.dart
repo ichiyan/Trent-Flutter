@@ -35,23 +35,24 @@ class _TruckCatalogItemState extends State<TruckCatalogItem> {
           SizedBox(
             height: 20.0,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: AnimatedSmoothIndicator(
-                activeIndex: activeIndex,
-                count: widget.images.length,
-                effect: WormEffect(
-                  dotWidth: 10,
-                  dotHeight: 10,
-                  dotColor: Color(0xFFE8E8E8),
-                  activeDotColor: kPrimaryColor,
+          if (widget.images.length > 1)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: AnimatedSmoothIndicator(
+                  activeIndex: activeIndex,
+                  count: widget.images.length,
+                  effect: WormEffect(
+                    dotWidth: 10,
+                    dotHeight: 10,
+                    dotColor: Color(0xFFE8E8E8),
+                    activeDotColor: kPrimaryColor,
+                  ),
+                  onDotClicked: (index) => controller.animateToPage(index),
                 ),
-                onDotClicked: (index) => controller.animateToPage(index),
               ),
             ),
-          ),
           CarouselSlider.builder(
             carouselController: controller,
             itemCount: widget.images.length,
@@ -60,7 +61,7 @@ class _TruckCatalogItemState extends State<TruckCatalogItem> {
             },
             options: CarouselOptions(
               // height: height * 0.28,
-              // viewportFraction: 1,
+              viewportFraction: widget.images.length > 1 ? 0.8 : 1,
               enableInfiniteScroll: false,
               enlargeCenterPage: true,
               enlargeStrategy: CenterPageEnlargeStrategy.height,
